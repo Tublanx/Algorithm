@@ -1,28 +1,15 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+	public static void main(String[] args) {
+		var sc = new Scanner(System.in);
 
-		int n = Integer.parseInt(st.nextToken());
-		int t = Integer.parseInt(st.nextToken());
-		int c = Integer.parseInt(st.nextToken());
-		int p = Integer.parseInt(st.nextToken());
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+		int n12 = sc.nextInt();
 
-		int a = n / t;
-		if (n % t == 0)
-			a--;
-		int res = a * c * p;
-		bw.write(res + "");
-
-		bw.flush();
+		int result = ((n1 + 1) * (n2 + 1)) / (n12 + 1) - 1;
+		System.out.println(result);
 	}
 }
